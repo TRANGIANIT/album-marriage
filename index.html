@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Love Story - Loc & Partner</title>
+    
+    <!-- Google Fonts: Playfair Display & Great Vibes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- YouTube Music (Hidden) -->
+    <div id="youtube-player" style="display: none;"></div>
+
+    <!-- Cinematic Overlays -->
+    <div class="overlay film-grain"></div>
+    <div class="overlay vignette"></div>
+    <div class="overlay light-leaks"></div>
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Intro Scene -->
+    <section id="intro" class="scene active">
+        <div class="intro-content">
+            <h1 class="fade-text delay-1">A Love Story</h1>
+            <h2 class="fade-text delay-2">Loc & <span id="partner-name">[Partner Name]</span></h2>
+            <h3 class="fade-text delay-3">Our Wedding Film</h3>
+            <button id="start-btn" class="fade-text delay-4">Begin the Story</button>
+        </div>
+    </section>
+
+    <!-- Slideshow Scene -->
+    <section id="slideshow" class="scene">
+        <div id="slide-container">
+            <!-- Images will be dynamically injected here -->
+        </div>
+        
+        <!-- Chapter / Caption Text -->
+        <div id="caption-container">
+            <h2 id="caption-text"></h2>
+        </div>
+
+        <!-- Transitions Overlay (for cross dissolve / film burns) -->
+        <div id="transition-overlay"></div>
+    </section>
+
+    <!-- Outro Scene -->
+    <section id="outro" class="scene">
+        <div class="outro-content">
+            <h1 class="fade-text outro-delay-1">And so a new chapter begins...</h1>
+            <h2 class="fade-text outro-delay-2">Thank you for celebrating our love ❤️</h2>
+        </div>
+    </section>
+
+    <!-- Controls -->
+    <div id="controls">
+        <button id="pause-btn">⏸ Pause</button>
+        <button id="sound-btn">🔊 Sound On</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
