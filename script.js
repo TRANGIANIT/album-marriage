@@ -6,7 +6,7 @@ const MAX_IMAGES_TO_CHECK = 50; // Giới hạn số ảnh tối đa để auto-
 const IMAGE_DURATION_MS = 10000; // Thời gian hiển thị mỗi bức ảnh (10s)
 const FADE_DURATION_MS = 3000; // Thời gian chuyển cảnh
 
-const imageList = [];
+const imageList = ["images/1.jpg","images/2.jpg","images/3.jpg","images/480242671_3064688477015430_2934833717742444879_n.jpg","images/480874766_3049726518511626_3874105527874658124_n.jpg","images/480905094_3048789071938704_5044050983065231869_n.jpg","images/481226228_3053904624760482_5990154567363076570_n.jpg","images/481669232_3049495601868051_1255855470381881731_n.jpg","images/482086917_3056251931192418_7935135165464530773_n.jpg","images/484400363_3065752986908979_3112608135335390608_n.jpg","images/486093289_3074928162658128_6282102039296772253_n.jpg","images/486378708_3073752596109018_746413029067166642_n.jpg","images/487382932_3079068308910780_1269196281901952409_n.jpg","images/488507636_3090289951121949_3376463499149264694_n.jpg","images/488646440_3086352051515739_4303438213954306609_n.jpg","images/489764599_3092353634248914_5902561302735050376_n.jpg","images/492005705_3110852675732343_96236284532558117_n.jpg","images/505668232_3173180676166209_4351892920086334312_n.jpg","images/505956930_3172475026236774_1426205419776612057_n.jpg","images/506391070_3173373689480241_626800231672187668_n.jpg","images/506757951_3173379852812958_809612722277978837_n.jpg","images/506924922_3173379979479612_2618400586139154859_n.jpg","images/507091936_3173380152812928_1735211096866064368_n.jpg","images/507129809_3173868036097473_8160452032656005740_n.jpg"];
 let currentImageIndex = 0;
 let slideInterval;
 let isPlaying = false;
@@ -78,7 +78,7 @@ function startMusic() {
 }
 
 // ==========================================================
-// 2. Auto-discover Images
+// 2. Tải danh sách hình ảnh (Đã tự động lấy vào mảng)
 // ==========================================================
 // Hàm tải ảnh. Chạy đệ quy để thử tìm các file ảnh từ 1.jpg, 2.jpg...
 function discoverImages(index) {
@@ -100,7 +100,9 @@ function discoverImages(index) {
     img.src = imgUrl;
 }
 
-// Gọi hàm tải ảnh khi trang vừa load
+// Đã load mảng tĩnh vào imageList, không cần discoverImages nữa.
+
+// Gọi hàm khi trang vừa load
 window.addEventListener('DOMContentLoaded', () => {
     // Fade in text for intro
     setTimeout(() => document.querySelector('.delay-1').classList.add('show'), 500);
@@ -108,7 +110,6 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => document.querySelector('.delay-3').classList.add('show'), 4000);
     setTimeout(() => document.querySelector('.delay-4').classList.add('show'), 6000);
 
-    discoverImages(1); // bắt đầu mò từ 1.jpg
     initCanvasParticles();
 });
 
